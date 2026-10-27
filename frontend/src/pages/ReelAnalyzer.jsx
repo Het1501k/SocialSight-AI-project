@@ -3,7 +3,9 @@ import axios from "axios";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../firebase";
 
-const API_URL = "http://localhost:5000/api/analyze";
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+});
 
 const palette = {
   ink: "#211d38", muted: "#77758c", purple: "#6757e8",
