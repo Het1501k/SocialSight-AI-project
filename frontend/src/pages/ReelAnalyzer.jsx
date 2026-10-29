@@ -464,6 +464,9 @@ export default function ReelAnalyzer() {
       }
     } catch (requestError) {
       console.error("Reel analysis failed:", requestError);
+      console.error("Request URL:", requestError.config?.url);
+      console.error("HTTP status:", requestError.response?.status);
+      console.error("Backend response:", requestError.response?.data);
       const status = requestError.response?.status;
       const serverMessage = requestError.response?.data?.message;
       if (status === 402) setError(serverMessage || "The data provider requires available credits.");
