@@ -427,7 +427,7 @@ export default function ReelAnalyzer() {
 
     setLoading(true);
     try {
-      const response = await axios.post(API_URL, {
+      const response = await axios.post(`${API_URL}/api/analyze`, {
         reelUrl: cleanUrl,
         productDescription: cleanDescription,
       }, { timeout: 240000 });
