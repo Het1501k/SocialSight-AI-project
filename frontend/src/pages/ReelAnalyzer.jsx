@@ -3,8 +3,10 @@ import axios from "axios";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../firebase";
 
+const API_URL = "https://socialsight-backend.onrender.com";
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: API_URL,
 });
 
 const palette = {
